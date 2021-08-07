@@ -1,0 +1,8 @@
+.main-container {
+  /* background-image: url('../../pictures/bookwallpaper.jpeg'); */
+  height: 100%;
+  background-image: url('../../pictures//bookwallpaper.jpeg');
+  /* z-index: -1; */
+  background-repeat: repeat;
+  overflow: auto;
+}

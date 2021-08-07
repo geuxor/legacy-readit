@@ -1,0 +1,46 @@
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  background-color: #5d4954;
+  height: 12%;
+}
+
+.logo {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+
+.logo a {
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+
+  justify-content: flex-end;
+  width: 70%;
+}
+
+.nav-links li {
+  list-style: none;
+}
+
+.nav-links a {
+  width: 10%;
+  color: rgb(226, 226, 226);
+  text-decoration: none;
+  letter-spacing: 3px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: 0.2s;
+  top: 0;
+  position: relative;
+}
+
+.nav-links:hover {
+  top: -10px;
+}

@@ -1,0 +1,47 @@
+.container-form {
+  display: flex;
+
+  border-radius: 10px;
+  padding: 5rem;
+  /* margin: 5rem 5rem 5rem 5rem; */
+  justify-content: center;
+}
+
+.search-term {
+  width: 20%;
+  border: 3px solid #5d4954;
+  border-right: none;
+  padding: 5px;
+  height: 36px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+/* .search-term:focus {;
+} */
+
+.form-button {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #5d4954;
+  background: #5d4954;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.wrap {
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.select-search-bar {
+
+
+}

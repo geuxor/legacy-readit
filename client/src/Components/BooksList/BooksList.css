@@ -1,0 +1,9 @@
+.container-list {
+  display: flex;
+  width: 100vw;
+  /* overflow-x: auto; */
+  /* border: black solid 1px; */
+  padding: 20px;
+  flex-wrap:wrap;
+  justify-content: space-between;
+}
