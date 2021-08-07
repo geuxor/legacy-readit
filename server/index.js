@@ -6,7 +6,7 @@ const app = express();
 const router = require('./Router');
 const db = require ('./models/index.js')
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3005;
 
 app.use(cors());
 app.use(express.json());
@@ -15,7 +15,7 @@ app.use(router);
 
 (async function bootstrap () {
   try {
-    await db.sequelize.sync();
+    await db.sequelize.sync({});
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
   })

@@ -8,7 +8,7 @@ const config = {
   dialect: 'postgres',
 };
 
-const sequelize = new Sequelize('read', 'mariapallareslara', '', config);
+const sequelize = new Sequelize('readit', 'aaronzomback', 'aaronzomback', config);
 
 const files = fs.readdirSync(__dirname);
 const db = {};

@@ -9,7 +9,7 @@ const ApiBook = {};
 // };
 
 ApiBook.getBooks = async (book) => {
-  const data = await fetch (`https://www.googleapis.com/books/v1/volumes?q=${book}&orderBy=relevance&key=${process.env.REACT_APP_API_KEY}&maxResults=40`)
+  const data = await fetch (`https://www.googleapis.com/books/v1/volumes?q=${book}&orderBy=relevance&key=AIzaSyA0gU50EaNeXjQlcVhUFssff2IrlDw29Hw&maxResults=40`)
   return await data.json()
 }
 
