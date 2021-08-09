@@ -15,13 +15,15 @@ export default function SingleBook(props) {
   async function handleClick(e) {
     console.log('PROPS.BOOK' + props.book)
 
-    console.log('MY LIST' + myList)
+    console.log('MY LIST', myList)
     if (!myList.includes(props.book)) {
+      console.log('test', setMyList)
       setMyList((prevValue) => {
         return [...prevValue, props.book];
       });
       await ApiDb.postBooksToDb(props.book);
     } else {
+      console.log('else')
       const newList = myList.filter((book) => {
         return props.book.title !== book.title;
       });
@@ -43,7 +45,7 @@ export default function SingleBook(props) {
       </div>
       <StarRating />
       <div className="button-container">
-        <button className="button-single-book" onClick={handleClick}>
+        <button data-testid='add-to-list' className="button-single-book" onClick={handleClick}>
           {myList.includes(props.book) ? 'Delete book' : 'Add to List'}
         </button>
         <button data-testid='read-more' className="button-single-book" onClick={openModal}>
@@ -73,7 +75,7 @@ export default function SingleBook(props) {
 
       <StarRating />
       <div className="button-container">
-        <button className="button-single-book" onClick={handleClick}>
+        <button data-testid='add-to-list' className="button-single-book" onClick={handleClick}>
           {myList.includes(props.book) ? 'Delete book' : 'Add to List'}
         </button>
         <button data-testid='read-more' className="button-single-book" onClick={openModal}>
