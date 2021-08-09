@@ -3,9 +3,11 @@ import {screen, render, fireEvent, getByText} from '@testing-library/react';
 import SingleBook from '../Components/SingleBook/SingleBook';
 import { bookMock } from './singleBookMock';
 
-// jest.mock('../Components/SingleBook/SingleBook', () => {
-//   setMyList: () => ([bookMock])
-// })
+jest.mock('../Services/apiDb.js', () => {
+  return {postBooksToDb: () => new Promise((resolve) => {
+    resolve()
+  })}
+})
 
 it('renders correctly', () => {
   const {getByTestId} = render(<SingleBook book={bookMock} />)
@@ -23,5 +25,14 @@ describe('read-more button', () => {
     expect(showModal).toBeTruthy();
     const description = screen.getByText('Description')
     expect(description).toBeTruthy();
+  })
+})
+
+describe('add to list button', () => {
+  it('should add book to list when clicked', () => {
+    const {getByTestId} = render(<SingleBook book={bookMock} />)
+    const button = getByTestId('add-to-list')
+    fireEvent.click(button)
+    expect(button).toBeTruthy();
   })
 })
