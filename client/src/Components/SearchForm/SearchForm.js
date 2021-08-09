@@ -4,17 +4,20 @@ import Api from '../../Services/ApiBook';
 import './SearchForm.css';
 
 export default function SearchForm(props) {
-  const { setSortOrder, setResults } = useContext(AppContext);
+  const setSortOrder = useContext(AppContext);
   const [book, setBook] = useState('');
 
   async function handleSubmit(e) {
     e.preventDefault();
+    try {
     if (!book) return;
     props.setIsLoading(true);
     Api.getBooks(book).then((data) => {
       props.setResults(data.items);
       props.setIsLoading(false);
-    });
+    }) } catch(e) {
+      console.log(e)
+    }
   }
 
   function handleSort(e) {
@@ -32,7 +35,7 @@ export default function SearchForm(props) {
           value={book}
           onChange={(e) => setBook(e.target.value)}
         />
-        <button type="submit" className="form-button">
+        <button data-testid='search-button' type="submit" className="form-button">
           <i className="icon" className="fa fa-search" aria-hidden="true"></i>
         </button>
         <select className="select-search-bar" onChange={handleSort}>

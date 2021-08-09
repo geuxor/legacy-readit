@@ -1,12 +1,12 @@
 const ApiDb = {};
 
 ApiDb.getBooksFromDb = async () => {
-  const data = await fetch('http://localhost:3000/books');
+  const data = await fetch('http://localhost:4000/books');
   return data
 };
 
 ApiDb.postBooksToDb = async (book) => {
-  const data = await fetch('http://localhost:3000/books', {
+  const data = await fetch('http://localhost:4000/books', {
     method: 'POST',
     mode: 'cors',
     cache: 'no-cache',
@@ -20,7 +20,7 @@ ApiDb.postBooksToDb = async (book) => {
 };
 
 ApiDb.deleteBookFromDb = async (bookID) => {
-  const data = await fetch('http://localhost:3000/books', {
+  const data = await fetch('http://localhost:4000/books', {
     method: 'DELETE',
     mode: 'cors',
     cache: 'no-cache',
