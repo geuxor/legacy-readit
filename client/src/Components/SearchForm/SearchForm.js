@@ -4,7 +4,7 @@ import Api from '../../Services/ApiBook';
 import './SearchForm.css';
 
 export default function SearchForm(props) {
-  const { setSortOrder, setResults } = useContext(AppContext);
+  const { setSortOrder } = useContext(AppContext);
   const [book, setBook] = useState('');
 
   async function handleSubmit(e) {
@@ -28,6 +28,7 @@ export default function SearchForm(props) {
         <input
           className="search-term"
           type="text"
+          title="dummySearch"
           placeholder="Search for a book"
           value={book}
           onChange={(e) => setBook(e.target.value)}

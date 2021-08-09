@@ -48,7 +48,7 @@ export default function SingleBook(props) {
         <button className="button-single-book" onClick={handleClick}>
           {myList.includes(props.book) ? 'Delete book' : 'Add to List'}
         </button>
-        <button className="button-single-book" onClick={openModal}>
+        <button className="button-single-book" name="readmore" onClick={openModal}>
           Read more
         </button>
       </div>

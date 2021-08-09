@@ -13,7 +13,7 @@ export default function StarRating() {
           <label>
             <input type="radio" name="rating" onClick={() => setRating(ratingValue)
             }/>
-            <FaStar className="star" size={20} color={ratingValue <= rating ? 'yellow' : 'grey' }/>
+            <FaStar data-testid="star" className="star" size={20} color={ratingValue <= rating ? 'yellow' : 'grey' }/>
           </label>
         );
       })}
