@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BsBookHalf } from 'react-icons/bs';
-import MyList from '../MyListPage/MyListPage';
 import './NavBar.css';
 
 export default function NavBar() {
@@ -15,10 +14,10 @@ export default function NavBar() {
       <BsBookHalf size={40} color={'white'}/>
       <ul className="nav-links">
         <Link to="/mylist">
-          <a>My List</a>
+          My List
         </Link>
-        <a>Contact</a>
-        <a>About</a>
+        <a href='/contact'>Contact</a>
+        <a href='/about'>About</a>
       </ul>
       <div className="burger"></div>
     </nav>

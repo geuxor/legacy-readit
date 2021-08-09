@@ -9,8 +9,6 @@ export default function SingleBook(props) {
   const { myList, setMyList } = useContext(AppContext);
   const [showModal, setShowModal] = useState(false);
 
-
-
   function openModal() {
     setShowModal((prevValue) => !prevValue);
   }
@@ -34,7 +32,7 @@ export default function SingleBook(props) {
   //conditional rendering
   return props.book.volumeInfo ? (
     <div className="single-book-container">
-      <img
+      <img alt='thumbnail'
         className="book-cover"
         src={props.book.volumeInfo.imageLinks?.thumbnail}
       />
@@ -48,7 +46,7 @@ export default function SingleBook(props) {
         <button className="button-single-book" onClick={handleClick}>
           {myList.includes(props.book) ? 'Delete book' : 'Add to List'}
         </button>
-        <button className="button-single-book" onClick={openModal}>
+        <button data-testid='read-more' className="button-single-book" onClick={openModal}>
           Read more
         </button>
       </div>
@@ -63,7 +61,7 @@ export default function SingleBook(props) {
     </div>
   ) : (
     <div className="single-book-container">
-      <img
+      <img alt='cover'
         className="book-cover"
         src={props.book.image}
       />
@@ -78,7 +76,7 @@ export default function SingleBook(props) {
         <button className="button-single-book" onClick={handleClick}>
           {myList.includes(props.book) ? 'Delete book' : 'Add to List'}
         </button>
-        <button className="button-single-book" onClick={openModal}>
+        <button data-testid='read-more' className="button-single-book" onClick={openModal}>
           Read more
         </button>
       </div>

@@ -1,3 +1,4 @@
 # .env
 # REACT_APIKEY='sfgkjhsdgkhskljghllgdfg'
 node_modules
+.DS_Store

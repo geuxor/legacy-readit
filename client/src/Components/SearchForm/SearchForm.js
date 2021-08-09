@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext} from 'react';
 import { AppContext } from '../Dashboard/Dashboard';
 import Api from '../../Services/ApiBook';
 import './SearchForm.css';
@@ -36,7 +36,7 @@ export default function SearchForm(props) {
           onChange={(e) => setBook(e.target.value)}
         />
         <button data-testid='search-button' type="submit" className="form-button">
-          <i className="icon" className="fa fa-search" aria-hidden="true"></i>
+          <i className="icon fa fa-search" aria-hidden="true"></i>
         </button>
         <select className="select-search-bar" onChange={handleSort}>
           <option  defaultValue="Sort" disabled value="Sort">
