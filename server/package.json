@@ -4,7 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --transformIgnorePatterns \"node_modules/(?!server)/\" --env=jsdom",
+    "test:watch": "jest --watch --no-cache"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "collectCoverageFrom": [
+      "*.js"
+    ],
+    "transform": {
+      "\\.[jt]sx?$": "babel-jest"
+    }
   },
   "author": "",
   "license": "ISC",
@@ -14,5 +24,9 @@
     "express": "^4.17.1",
     "pg": "^8.7.1",
     "sequelize": "^6.6.5"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "supertest": "^6.1.4"
   }
 }
