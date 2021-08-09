@@ -3,12 +3,12 @@ const path = require('path');
 const {Sequelize} = require('sequelize');
 
 const config = {
-
   host: 'localhost',
   dialect: 'postgres',
+  logging: false
 };
 
-const sequelize = new Sequelize('read', 'mariapallareslara', '', config);
+const sequelize = new Sequelize('legacyread', 'postgres', '12345', config);
 
 const files = fs.readdirSync(__dirname);
 const db = {};
