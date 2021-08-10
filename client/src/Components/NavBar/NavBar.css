@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 8vh;
-  background-color: #5d4954;
+  background-color: #310e68;
+background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
   height: 12%;
 }
 
@@ -20,7 +23,6 @@ nav {
 
 .nav-links {
   display: flex;
-
   justify-content: flex-end;
   width: 70%;
 }
@@ -31,11 +33,11 @@ nav {
 
 .nav-links a {
   width: 10%;
-  color: rgb(226, 226, 226);
+  color: white;
   text-decoration: none;
   letter-spacing: 3px;
-  font-weight: bold;
-  font-size: 14px;
+  font-family: "poppins";
+  font-size: 15px;
   transition: 0.2s;
   top: 0;
   position: relative;
