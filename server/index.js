@@ -19,7 +19,7 @@ app.use(router);
     console.log(`Server running on http://localhost:${PORT}`);
   })
   } catch (err) {
-    console.log(err)
+    console.log('server err', err)
   }
 })()
 

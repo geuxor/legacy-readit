@@ -58,7 +58,7 @@ describe('integration tests', () => {
     const res = await request.delete(`/books/${id}`)
     console.log('Response from delete req==>', res.body.message);
     const book = await db.Book.findOne({ where: { id: id } })
-    // console.log('book ====>', book);
+    // console.log('book ====>', book) 
     expect(book).toBe(null)
   })
 

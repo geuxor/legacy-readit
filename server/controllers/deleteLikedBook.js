@@ -1,7 +1,7 @@
 const db = require('../models/index');
 
 async function deleteLikedBook(req, res) {
-  // console.log('--------', req.params.id)
+  // console.log('-------', req.params.id)
   try {
     const deletedBook = await db.Book.destroy({
       where: {

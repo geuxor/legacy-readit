@@ -1,7 +1,7 @@
 const db = require('../models/index');
 
 async function postBook(req, res) {
-  // console.log(req.body);
+  // console.log(req.body)
 
   try {
     const book = await db.Book.create({
