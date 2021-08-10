@@ -19,7 +19,7 @@ for (const file of files) {
       sequelize,
       Sequelize.DataTypes
     );
-    console.log(model.name)
+    // console.log(model.name)
     db[model.name] = model;
   }
 }

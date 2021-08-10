@@ -4,7 +4,7 @@ const cors = require('cors');
 const supertest = require('supertest');
 const db = require('../models/index');
 const Book = require('../models/Schema');
-
+const { Sequelize } = require('sequelize');
 
 describe('integration tests', () => {
   const app = express();
@@ -13,39 +13,55 @@ describe('integration tests', () => {
   app.use(router);
 
   const request = supertest(app);
-
-  // connect to db before...
   beforeAll(async () => {
-    // connect to postgresql db / sequelize
-    const config = {host: 'localhost', dialect: 'postgres', logging: false};
-    const sequelize = new Sequelize('legacyread', 'postgres', '12345', config);
+    const config = { host: 'localhost', dialect: 'postgres', logging: false };
+    const sequelize = new Sequelize('legacyread', 'geuxor', 'geuxor', config);
   })
 
   // delete objects (Books, etc.) to ensure 'clean-slate' each test run
   afterAll(async () => {
     // delete Book logic
-    await db.Book.destroy({where: {}, truncate: true });
+    await db.Book.destroy({ where: {}, truncate: true });
   })
 
+  it(`post something to DB`, async () => {
+    const query = {
+      volumeInfo: {
+        title: 'great book',
+        imageLinks: { thumbnail: "http://books.google.com/books/content?id=-NRRAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" },
+        description: 'blabla blablabla blobloblo bliblibli',
+        publishedDate: "2014-03",
+        author: "Mats & Enzo"
+      }
+    }
 
-   describe('GET /', () => {
-   it('should get 200', (done) => {
-     request(app).get('/').expect(200, done);
-   });
- });
+    const res = await request.post(`/books`)
+      .set('Content-type', 'application/json')
+      // .set('Cookie', '')
+      .send(query)
+      .expect(200);
+    const book = await db.Book.findOne({ where: { title: query.volumeInfo.title } })
+    expect(book.title).toBe('great book');
+  })
 
-
-  it('should save a book to the database', async (done) => {
-    const title = "This is a test";
-    // title: req.body.volumeInfo.title,
-    const res = await request.postBook('/books')
-    // .expect(volumeInfo)
-//    .send({title})
-//   })
-
-  const book = db.Book.findOne({ where: { title = "This is a test"} });
-  expect(db.Book.title).toBe(title);
-  done();
-
+  it(`delete something from db`, async () => {
+    const createRes = await db.Book.create(
+      {
+        title: 'bad book',
+        description: 'blobloblo bliblibli',
+        publishedDate: "2014-03",
+        image: "http://books.google.com/books/content?id=-NRRAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+        author: "Mats & Enzo"
+      })
+    // console.log('createRes', createRes.dataValues)
+    const { id } = createRes
+    const res = await request.delete(`/books/${id}`)
+    console.log('Response from delete req==>', res.body.message);
+    const book = await db.Book.findOne({ where: { id: id } })
+    // console.log('book ====>', book);
+    expect(book).toBe(null)
+  })
 
 })
+
+

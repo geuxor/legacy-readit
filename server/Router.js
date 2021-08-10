@@ -8,6 +8,6 @@ router.get('/books', getBooks);
 
 router.post('/books', postBook);
 
-router.delete('/books', deleteLikedBook);
+router.delete('/books/:id', deleteLikedBook);
 
 module.exports = router;

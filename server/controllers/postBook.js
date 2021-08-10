@@ -1,23 +1,24 @@
 const db = require('../models/index');
 
 async function postBook(req, res) {
-  console.log(req.body);
-  
+  // console.log(req.body);
+
   try {
     const book = await db.Book.create({
       title: req.body.volumeInfo.title,
       description: req.body.volumeInfo.description,
-      id: req.body.id,
       publishedDate: req.body.volumeInfo.publishedDate,
       image: req.body.volumeInfo.imageLinks.thumbnail,
       author: req.body.volumeInfo.author
     });
-    console.log(book);
-    
-    res.status(201);
+
+    // console.log(book);
+    res.status(200);
     res.send(book);
   } catch (err) {
-    res.status(500);
+    console.log(err);
+
+    res.status(501);
     res.send(err);
   }
 }

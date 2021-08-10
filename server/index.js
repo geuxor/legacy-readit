@@ -14,7 +14,7 @@ app.use(router);
 
 (async function bootstrap () {
   try {
-    await db.sequelize.sync();
+    await db.sequelize.sync({force: true});
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
   })
