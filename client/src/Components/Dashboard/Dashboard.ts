@@ -5,13 +5,37 @@ import NavBar from '../NavBar/NavBar';
 import './Dashboard.css';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import ApiDb from '../../Services/ApiDb';
+import Book from '../../book.model'
 
-export const AppContext = React.createContext({myList: any, setMyList: (list) => {}});
+type ContextProps = {
+  myList: Result[];
+  setMyList: (list) => {};
+}
+export const AppContext = React.createContext<Partial<ContextProps>>({});
+
+interface Result {
+  volumeInfo: {
+    title: string;
+    subtitle: string;
+    authors: [];
+    publisher: string;
+    publishedDate: string;
+    imageLinks: {
+    thumbnail: string;
+    }
+  }
+  anotherOne: number;
+  selfLink: string;
+  etag: string;
+  id: string;
+  kind: string;
+  accessInfo: { country: string; viewability: string; embeddable: boolean; publicDomain: boolean; textToSpeechPermission: string }
+}
 
 export default function Dashboard() {
-  const [unSortedResults, setResults] = useState([]);
-  const [sortOrder, setSortOrder] = useState('');
-  const [myList, setMyList] = useState([]);
+  const [unSortedResults, setResults] = useState<Result[]>([]);
+  const [sortOrder, setSortOrder] = useState<any>('');
+  const [myList, setMyList] = useState<any>([]);
 
  console.log(myList)
   useEffect(() => {
@@ -30,13 +54,13 @@ export default function Dashboard() {
   const results = [...unSortedResults].sort((a, b) => {
     if (sortOrder === 'Oldest') {
       return (
-        parseInt(b.volumeInfo.publishedDate?.substring(0, 4)) -
-        parseInt(a.volumeInfo.publishedDate?.substring(0, 4))
+        parseInt(b.volumeInfo.publishedDate.substring(0, 4)) -
+        parseInt(a.volumeInfo.publishedDate.substring(0, 4))
       );
     } else if (sortOrder === 'Newest') {
       return (
-        parseInt(a.volumeInfo.publishedDate?.substring(0, 4)) -
-        parseInt(b.volumeInfo.publishedDate?.substring(0, 4))
+        parseInt(a.volumeInfo.publishedDate.substring(0, 4)) -
+        parseInt(b.volumeInfo.publishedDate.substring(0, 4))
       );
     }
   });
