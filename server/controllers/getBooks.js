@@ -4,7 +4,7 @@ async function getBooks(req, res) {
   try {
     const books = await db.Book.findAll({});
 
-    // const newBooks = books.map((book) => {
+    // const newBooks = books.map((book) => { 
     //   return {
     //     volumeInfo: book,
     //   };
