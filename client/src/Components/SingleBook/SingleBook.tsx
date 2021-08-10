@@ -4,28 +4,30 @@ import { AppContext } from '../Dashboard/Dashboard';
 import Modal from '../Modal/Modal';
 import StarRating from '../StarRating/StarRating';
 import ApiDb from '../../Services/ApiDb';
+import Book from '../../book.model'
 
-export default function SingleBook(props) {
+type Props = {
+  book: Book;
+};
+
+export default function SingleBook(props: Props): JSX.Element {
   const { myList, setMyList } = useContext(AppContext);
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   function openModal() {
-    setShowModal((prevValue) => !prevValue);
+    setShowModal((prevValue:boolean) => !prevValue);
   }
-  async function handleClick(e) {
-    console.log('PROPS.BOOK' + props.book)
-
-    console.log('MY LIST', myList)
+  async function handleClick(e: any)  {
     if (!myList.includes(props.book)) {
       console.log('test', setMyList)
-      setMyList((prevValue) => {
+      setMyList((prevValue: Book[]) => {
         return [...prevValue, props.book];
       });
       await ApiDb.postBooksToDb(props.book);
     } else {
       console.log('else')
-      const newList = myList.filter((book) => {
-        return props.book.title !== book.title;
+      const newList = myList.filter((book: Book) => {
+        return props.book.whatever !== book.title;
       });
       setMyList(newList);
       await ApiDb.deleteBookFromDb(props.book.id);
