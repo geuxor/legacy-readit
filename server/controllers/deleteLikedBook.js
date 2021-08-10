@@ -1,11 +1,11 @@
 const db = require('../models/index');
 
 async function deleteLikedBook(req, res) {
-  console.log(req.body)
+  // console.log('-------', req.params.id)
   try {
     const deletedBook = await db.Book.destroy({
       where: {
-        id: req.body,
+        id: req.params.id,
       },
     }).then(function(deletedRow) {
       if (deletedRow === 1) {

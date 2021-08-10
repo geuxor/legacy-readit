@@ -7,7 +7,7 @@ const postBook = require('./controllers/postBook');
 router.get('/books', getBooks);
 
 router.post('/books', postBook);
-
-router.delete('/books', deleteLikedBook);
+//changed
+router.delete('/books/:id', deleteLikedBook);
 
 module.exports = router;

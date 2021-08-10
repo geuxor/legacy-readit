@@ -3,10 +3,10 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     description: DataTypes.TEXT,
     image: DataTypes.STRING,
-    id: {
-      type: DataTypes.STRING,
-      primaryKey: true
-    },
+    // id: {
+    //   type: DataTypes.STRING
+    //   primaryKey: true
+    // },
     author: DataTypes.STRING,
     publishedDate: DataTypes.STRING
   });
