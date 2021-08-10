@@ -27,13 +27,9 @@ describe('integration tests', () => {
     await db.Book.destroy({where: {}, truncate: true });
   })
 
-
-   describe('GET /', () => {
    it('should get 200', (done) => {
      request(app).get('/').expect(200, done);
    });
- });
-
 
   it('should save a book to the database', async (done) => {
     const title = "This is a test";
