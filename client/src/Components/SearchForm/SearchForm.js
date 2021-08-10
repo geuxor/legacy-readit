@@ -34,6 +34,7 @@ export default function SearchForm(props) {
           placeholder="Search for a book"
           value={book}
           onChange={(e) => setBook(e.target.value)}
+          autoFocus
         />
         <button data-testid='search-button' type="submit" className="form-button">
           <i className="icon fa fa-search" aria-hidden="true"></i>

@@ -39,9 +39,9 @@ export default function SingleBook(props) {
         src={props.book.volumeInfo.imageLinks?.thumbnail}
       />
       <div className="book-info">
-        <h2>{props.book.volumeInfo.title.substring(0, 80) + '...'}</h2>
+        <h2 className='book-title'>{props.book.volumeInfo.title.substring(0, 50)}</h2>
         <h3>{props.book.volumeInfo.author}</h3>
-        <p>{props.book.volumeInfo.publishedDate}</p>
+        <p className='book-date'>{props.book.volumeInfo.publishedDate}</p>
       </div>
       <StarRating />
       <div className="button-container">
@@ -70,7 +70,7 @@ export default function SingleBook(props) {
       <div className="book-info">
         <h2>{props.book.title.substring(0, 80) + '...'}</h2>
         <h3>{props.book.author}</h3>
-        <p>{props.book.publishedDate}</p>
+        <p className='book-date'>{props.book.publishedDate}</p>
       </div>
 
       <StarRating />

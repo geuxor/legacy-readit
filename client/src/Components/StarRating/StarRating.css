@@ -3,6 +3,7 @@ input[type="radio"] {
 }
 
 .star {
+  margin-left: 5px;
   cursor: pointer;
   transition: color 200ms;
 }
