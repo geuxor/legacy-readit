@@ -33,5 +33,7 @@ export interface ContextProps {
   setSortOrder: any; 
   myList: Book[]; 
   setMyList: any;
+  book: any;
+  setBook: any;
 }
 

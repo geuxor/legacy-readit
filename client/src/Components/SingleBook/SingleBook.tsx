@@ -7,14 +7,12 @@ import { Book, Result } from '../../type.d';
 import { AppContext } from '../../AppContext';
 
 type Props = {
-  book: Book;
+  book: Result;
 };
 
-type Results = {
-  result: Result;
-}
 
-export default function SingleBook(props: Props, results: Results): JSX.Element {
+
+export default function SingleBook({book}: Props): JSX.Element {
   const { myList, setMyList } = useContext(AppContext);
   const [showModal, setShowModal] = useState<boolean>(false);
 
@@ -22,38 +20,38 @@ export default function SingleBook(props: Props, results: Results): JSX.Element 
     setShowModal((prevValue:boolean) => !prevValue);
   }
   async function handleClick(e: any)  {
-    if (!myList.includes(props.book)) {
+    if (!myList.includes(book)) {
       console.log('test', setMyList)
-      setMyList((prevValue: Book[]) => {
-        return [...prevValue, props.book];
+      setMyList((prevValue) => {
+        return [...prevValue, book];
       });
-      await ApiDb.postBooksToDb(props.book);
+      await ApiDb.postBooksToDb(book);
     } else {
       console.log('else')
-      const newList = myList.filter((book: Book) => {
-        return props.book.title !== book.title;
+      const newList = myList.filter((book) => {
+        return book.title !== book.title;
       });
       setMyList(newList);
-      await ApiDb.deleteBookFromDb(props.book.id);
+      await ApiDb.deleteBookFromDb(book.id);
     }
   }
 
   //conditional rendering
-  return results.result.volumeInfo ? (
+  return book.volumeInfo ? (
     <div className="single-book-container">
       <img alt='thumbnail'
         className="book-cover"
-        src={results.result.volumeInfo.imageLinks?.thumbnail}
+        src={book.volumeInfo.imageLinks?.thumbnail}
         />
       <div className="book-info">
-        <h2 className='book-title'>{results.result.volumeInfo.title.substring(0, 50)}</h2>
-        <h3>{results.result.volumeInfo.authors}</h3>
-        <p className='book-date'>{results.result.volumeInfo.publishedDate}</p>
+        <h2 className='book-title'>{book.volumeInfo.title.substring(0, 50)}</h2>
+        <h3>{book.volumeInfo.authors}</h3>
+        <p className='book-date'>{book.volumeInfo.publishedDate}</p>
       </div>
       <StarRating />
       <div className="button-container">
         <button data-testid='add-to-list' className="button-single-book" onClick={handleClick}>
-          {myList.includes(props.book) ? 'Delete book' : 'Add to List'}
+          {myList.includes(book) ? 'Delete book' : 'Add to List'}
         </button>
         <button data-testid='read-more' className="button-single-book" onClick={openModal}>
           Read more
@@ -62,28 +60,28 @@ export default function SingleBook(props: Props, results: Results): JSX.Element 
       {showModal ? (
         <Modal
           openModal={openModal}
-          book={props.book}
+          book={book}
           showModal={showModal}
           setShowModal={setShowModal}
         />
       ) : null}
-    </div>
-  ) : (
+      </div>
+    ) : (
     <div className="single-book-container">
       <img alt='cover'
         className="book-cover"
-        src={props.book.image}
+        src={book.image}
       />
       <div className="book-info">
-        <h2>{props.book.title.substring(0, 80) + '...'}</h2>
-        <h3>{props.book.author}</h3>
-        <p className='book-date'>{props.book.publishedDate}</p>
+        <h2>{book.title.substring(0, 80) + '...'}</h2>
+        <h3>{book.author}</h3>
+        <p className='book-date'>{book.publishedDate}</p>
       </div>
 
       <StarRating />
       <div className="button-container">
         <button data-testid='add-to-list' className="button-single-book" onClick={handleClick}>
-          {myList.includes(props.book) ? 'Delete book' : 'Add to List'}
+          {myList.includes(book) ? 'Delete book' : 'Add to List'}
         </button>
         <button data-testid='read-more' className="button-single-book" onClick={openModal}>
           Read more
@@ -92,7 +90,7 @@ export default function SingleBook(props: Props, results: Results): JSX.Element 
       {showModal ? (
         <Modal
           openModal={openModal}
-          book={props.book}
+          book={book}
           showModal={showModal}
           setShowModal={setShowModal}
         />
