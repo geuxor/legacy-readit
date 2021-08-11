@@ -5,37 +5,18 @@ import NavBar from '../NavBar/NavBar';
 import './Dashboard.css';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import ApiDb from '../../Services/ApiDb';
-import Book from '../../book.model'
+import { AppContext } from '../../AppContext';
 
-type ContextProps = {
-  myList: Result[];
-  setMyList: (list) => {};
-}
-export const AppContext = React.createContext<Partial<ContextProps>>({});
 
-interface Result {
-  volumeInfo: {
-    title: string;
-    subtitle: string;
-    authors: [];
-    publisher: string;
-    publishedDate: string;
-    imageLinks: {
-    thumbnail: string;
-    }
-  }
-  anotherOne: number;
-  selfLink: string;
-  etag: string;
-  id: string;
-  kind: string;
-  accessInfo: { country: string; viewability: string; embeddable: boolean; publicDomain: boolean; textToSpeechPermission: string }
-}
+
 
 export default function Dashboard() {
-  const [unSortedResults, setResults] = useState<Result[]>([]);
-  const [sortOrder, setSortOrder] = useState<any>('');
-  const [myList, setMyList] = useState<any>([]);
+
+  const { myList, setMyList, sortOrder, setSortOrder, unSortedResults, setResults } = React.useContext(AppContext);
+
+  // const [unSortedResults, setResults] = useState<Result[]>([]);
+  // const [sortOrder, setSortOrder] = useState<'Oldest' | 'Newest'>('Newest');
+  // const [myList, setMyList] = useState<any>([]);
 
  console.log(myList)
   useEffect(() => {
@@ -49,7 +30,7 @@ export default function Dashboard() {
       return data
     }
     dataFromDb().then(data => setMyList(data))
-  }, []);
+  }, [setMyList]);
 
   const results = [...unSortedResults].sort((a, b) => {
     if (sortOrder === 'Oldest') {
@@ -57,7 +38,7 @@ export default function Dashboard() {
         parseInt(b.volumeInfo.publishedDate.substring(0, 4)) -
         parseInt(a.volumeInfo.publishedDate.substring(0, 4))
       );
-    } else if (sortOrder === 'Newest') {
+    } else {
       return (
         parseInt(a.volumeInfo.publishedDate.substring(0, 4)) -
         parseInt(b.volumeInfo.publishedDate.substring(0, 4))
@@ -67,17 +48,6 @@ export default function Dashboard() {
 
   return (
     <Router>
-      <AppContext.Provider
-        value={{
-          unSortedResults,
-          setResults,
-          myList,
-          setMyList,
-          sortOrder,
-          setSortOrder,
-          results,
-        }}
-      >
         <div className="main-container">
           <NavBar />
           <Switch>
@@ -85,7 +55,6 @@ export default function Dashboard() {
             <Route path="/mylist" component={MyListPage} />
           </Switch>
         </div>
-      </AppContext.Provider>
     </Router>
   );
 }

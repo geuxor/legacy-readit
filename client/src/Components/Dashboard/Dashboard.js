@@ -6,7 +6,7 @@ import './Dashboard.css';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import ApiDb from '../../Services/ApiDb';
 
-export const AppContext = React.createContext({myList: any, setMyList: (list) => {}});
+export const AppContext = React.createContext({setMyList: (list) => {}});
 
 export default function Dashboard() {
   const [unSortedResults, setResults] = useState([]);
