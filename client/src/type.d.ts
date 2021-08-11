@@ -1,4 +1,5 @@
 export interface Book {
+  id: number;
   title: string;
   description: string;
   image: string;
@@ -18,7 +19,6 @@ export interface Result {
     thumbnail: string;
     }
   }
-  anotherOne: number;
   selfLink: string;
   etag: string;
   id: string;
@@ -31,7 +31,7 @@ export interface ContextProps {
   setResults: any; 
   sortOrder: 'Oldest' | 'Newest'; 
   setSortOrder: any; 
-  myList: Result[]; 
+  myList: Book[]; 
   setMyList: any;
 }
 
