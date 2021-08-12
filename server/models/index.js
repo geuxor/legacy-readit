@@ -8,7 +8,7 @@ const config = {
   logging: false
 };
 
-const sequelize = new Sequelize('legacyread', 'postgres', '12345', config);
+const sequelize = new Sequelize('readit', 'aaronzomback', 'aaronzomback', config);
 
 const files = fs.readdirSync(__dirname);
 const db = {};

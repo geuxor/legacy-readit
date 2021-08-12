@@ -5,6 +5,7 @@ const supertest = require('supertest');
 const db = require('../models/index');
 const Book = require('../models/Schema');
 const { Sequelize } = require('sequelize');
+const { doesNotMatch } = require('assert');
 
 describe('integration tests', () => {
   const app = express();
@@ -15,7 +16,7 @@ describe('integration tests', () => {
   const request = supertest(app);
   beforeAll(async () => {
     const config = { host: 'localhost', dialect: 'postgres', logging: false };
-    const sequelize = new Sequelize('legacyread', 'geuxor', 'geuxor', config);
+    const sequelize = new Sequelize('readit', 'aaronzomback', 'aaronzomback', config);
   })
 
   // delete objects (Books, etc.) to ensure 'clean-slate' each test run
@@ -53,13 +54,10 @@ describe('integration tests', () => {
         image: "http://books.google.com/books/content?id=-NRRAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
         author: "Mats & Enzo"
       })
-    // console.log('createRes', createRes.dataValues)
     const { id } = createRes
     const res = await request.delete(`/books/${id}`)
-    console.log('Response from delete req==>', res.body.message);
     const book = await db.Book.findOne({ where: { id: id } })
-    // console.log('book ====>', book) 
-    expect(book).toBe(null)
+    expect(book).toBe(null);
   })
 
 })

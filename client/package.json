@@ -20,7 +20,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --transformIgnorePatterns \"node_modules/(?!@client/allow)/\" --env=jsdom",
+    "test": "jest --transformIgnorePatterns \"node_modules/(?!@client/allow)/\" --env=jsdom --verbose",
     "test:watch": "jest --watch --no-cache",
     "eject": "react-scripts eject"
   },

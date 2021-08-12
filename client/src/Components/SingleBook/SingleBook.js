@@ -13,17 +13,12 @@ export default function SingleBook(props) {
     setShowModal((prevValue) => !prevValue);
   }
   async function handleClick(e) {
-    console.log('PROPS.BOOK' + props.book)
-
-    console.log('MY LIST', myList)
     if (!myList.includes(props.book)) {
-      console.log('test', setMyList)
       setMyList((prevValue) => {
         return [...prevValue, props.book];
       });
       await ApiDb.postBooksToDb(props.book);
     } else {
-      console.log('else')
       const newList = myList.filter((book) => {
         return props.book.title !== book.title;
       });

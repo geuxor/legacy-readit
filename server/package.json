@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --transformIgnorePatterns \"node_modules/(?!server)/\" --env=jsdom",
+    "test": "jest --transformIgnorePatterns \"node_modules/(?!server)/\" --env=jsdom --verbose",
     "test:watch": "jest --watch --no-cache"
   },
   "jest": {
