@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { Result, Book } from './type.d';
 import { ContextProps } from './type.d';
 

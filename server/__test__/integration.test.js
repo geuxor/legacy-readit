@@ -15,7 +15,7 @@ describe('integration tests', () => {
   const request = supertest(app);
   beforeAll(async () => {
     const config = { host: 'localhost', dialect: 'postgres', logging: false };
-    const sequelize = new Sequelize('legacyread', 'geuxor', 'geuxor', config);
+    const sequelize = new Sequelize('readit', 'aaronzomback', 'aaronzomback', config);
   })
 
   // delete objects (Books, etc.) to ensure 'clean-slate' each test run

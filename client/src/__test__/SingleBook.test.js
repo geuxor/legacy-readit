@@ -3,7 +3,7 @@ import {screen, render, fireEvent, getByText} from '@testing-library/react';
 import SingleBook from '../Components/SingleBook/SingleBook';
 import { bookMock } from './singleBookMock';
 
-jest.mock('../Services/apiDb.js', () => {
+jest.mock('../Services/apiDb2.js', () => {
   return {postBooksToDb: () => new Promise((resolve) => {
     resolve()
   })}
