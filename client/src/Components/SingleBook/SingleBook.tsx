@@ -1,43 +1,49 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, MouseEvent } from 'react';
 import './SingleBook.css';
 import Modal from '../Modal/Modal';
 import StarRating from '../StarRating/StarRating';
-import ApiDb from '../../Services/ApiDb';
+import { postBooksToDb, deleteBookFromDb  } from '../../Services/ApiDb';
 import { Book, Result } from '../../type.d';
 import { AppContext } from '../../AppContext';
 
 type Props = {
-  book: Result;
+  book: Book | Result;
+  fav: Boolean;
 };
 
 
-
-export default function SingleBook({book}: Props): JSX.Element {
+export default function SingleBook({book, fav}: Props): JSX.Element {
   const { myList, setMyList } = useContext(AppContext);
   const [showModal, setShowModal] = useState<boolean>(false);
 
   function openModal() {
     setShowModal((prevValue:boolean) => !prevValue);
   }
-  async function handleClick(e: any)  {
-    if (!myList.includes(book)) {
-      console.log('test', setMyList)
-      setMyList((prevValue) => {
+  async function handleClick(e: MouseEvent)  {
+    if (!fav) {
+      setMyList((prevValue: Book[]) => {
         return [...prevValue, book];
       });
-      await ApiDb.postBooksToDb(book);
+      ('volumeInfo' in book) && await postBooksToDb(book);
     } else {
-      console.log('else')
-      const newList = myList.filter((book) => {
-        return book.title !== book.title;
+      const newList: Book[] = myList.filter((listBook: Book): Boolean => {
+        // if it's a book? title matches
+        if ('title' in book) {
+          return listBook.title !== book.title;
+          // else if it's a result -- title matches
+        } else if ('volumeInfo' in book) {
+          return listBook.title !== book.volumeInfo.title;
+        } else {
+          return true;
+        }
       });
       setMyList(newList);
-      await ApiDb.deleteBookFromDb(book.id);
+      ('title' in book) && await deleteBookFromDb(book.id);
     }
   }
 
   //conditional rendering
-  return book.volumeInfo ? (
+  return ('volumeInfo' in book) ? (
     <div className="single-book-container">
       <img alt='thumbnail'
         className="book-cover"
@@ -51,7 +57,7 @@ export default function SingleBook({book}: Props): JSX.Element {
       <StarRating />
       <div className="button-container">
         <button data-testid='add-to-list' className="button-single-book" onClick={handleClick}>
-          {myList.includes(book) ? 'Delete book' : 'Add to List'}
+          {(fav) ? 'Delete book' : 'Add to List'}
         </button>
         <button data-testid='read-more' className="button-single-book" onClick={openModal}>
           Read more
@@ -81,7 +87,7 @@ export default function SingleBook({book}: Props): JSX.Element {
       <StarRating />
       <div className="button-container">
         <button data-testid='add-to-list' className="button-single-book" onClick={handleClick}>
-          {myList.includes(book) ? 'Delete book' : 'Add to List'}
+          {(fav) ? 'Delete book' : 'Add to List'}
         </button>
         <button data-testid='read-more' className="button-single-book" onClick={openModal}>
           Read more

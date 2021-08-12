@@ -4,7 +4,7 @@ import MyListPage from '../MyListPage/MyListPage';
 import NavBar from '../NavBar/NavBar';
 import './Dashboard.css';
 import DashboardPage from '../DashboardPage/DashboardPage';
-import ApiDb from '../../Services/ApiDb';
+import { getBooksFromDb } from '../../Services/ApiDb';
 import { AppContext } from '../../AppContext';
 
 
@@ -12,25 +12,20 @@ import { AppContext } from '../../AppContext';
 
 export default function Dashboard() {
 
-  const { myList, setMyList, sortOrder, setSortOrder, unSortedResults, setResults } = React.useContext(AppContext);
+  const { setMyList, sortOrder, unSortedResults, setResults } = React.useContext(AppContext);
 
-  // const [unSortedResults, setResults] = useState<Result[]>([]);
-  // const [sortOrder, setSortOrder] = useState<'Oldest' | 'Newest'>('Newest');
-  // const [myList, setMyList] = useState<any>([]);
 
- console.log(myList)
   useEffect(() => {
     setResults(results);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [sortOrder])
 
   useEffect(() => {
     async function dataFromDb() {
-      const res = await ApiDb.getBooksFromDb();
-      const data = await res.json()
-      return data
+      const res = await getBooksFromDb();
+      setMyList(res);
     }
-    dataFromDb().then(data => setMyList(data))
-  }, [setMyList]);
+    dataFromDb()}, [setMyList]);
 
   const results = [...unSortedResults].sort((a, b) => {
     if (sortOrder === 'Oldest') {

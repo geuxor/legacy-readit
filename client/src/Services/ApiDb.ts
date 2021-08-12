@@ -1,11 +1,11 @@
-const ApiDb = {};
+import { Book, Result } from '../type.d';
 
-ApiDb.getBooksFromDb = async () => {
+export const getBooksFromDb = async (): Promise<Book[]>  => {
   const data = await fetch('http://localhost:4000/books');
-  return data
+  return await data.json();
 };
 
-ApiDb.postBooksToDb = async (book) => {
+export const postBooksToDb = async (book: Result): Promise<Book> => {
   const data = await fetch('http://localhost:4000/books', {
     method: 'POST',
     mode: 'cors',
@@ -19,8 +19,12 @@ ApiDb.postBooksToDb = async (book) => {
   return await data.json();
 };
 
-ApiDb.deleteBookFromDb = async (bookID) => {
-  const data = await fetch('http://localhost:4000/books', {
+interface BookId {
+  message: string;
+}
+
+export const deleteBookFromDb = async (bookID: number ): Promise<BookId> => {
+  const data = await fetch(`http://localhost:4000/books/${bookID}`, {
     method: 'DELETE',
     mode: 'cors',
     cache: 'no-cache',
@@ -32,5 +36,3 @@ ApiDb.deleteBookFromDb = async (bookID) => {
   });
   return await data.json();
 }
-
-module.exports = ApiDb
