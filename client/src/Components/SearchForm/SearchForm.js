@@ -1,11 +1,11 @@
 import React, { useState, useContext} from 'react';
-import { AppContext } from '../Dashboard/Dashboard';
+import { AppContext } from '../../AppContext';
 import Api from '../../Services/ApiBook';
 import './SearchForm.css';
 
 export default function SearchForm(props) {
-  // const setSortOrder = useContext(AppContext);
-  const [book, setBook] = useState('');
+
+  const {book, setBook} = useContext(AppContext);
 
   async function handleSubmit(e) {
     e.preventDefault();

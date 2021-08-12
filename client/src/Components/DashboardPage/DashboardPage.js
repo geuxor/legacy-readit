@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { AppContext } from '../Dashboard/Dashboard';
+import { AppContext } from '../../AppContext';
 import SearchForm from '../SearchForm/SearchForm';
 import BooksList from '../BooksList/BooksList';
 import Spinner from '../Spinner/Spinner';

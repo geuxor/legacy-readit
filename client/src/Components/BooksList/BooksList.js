@@ -1,15 +1,14 @@
 import React, {useContext} from 'react';
 import './BooksList.css';
 import SingleBook from '../SingleBook/SingleBook';
-import {AppContext} from '../Dashboard/Dashboard'
+import {AppContext} from '../../AppContext';
 
 export default function BooksList(props) {
-  // const {unSortedResults, sortOrder, myList} = useContext(AppContext)
+
+  const {unSortedResults, sortOrder, myList} = useContext(AppContext)
 
  
-//  function checkList () {
-//    if (props.list === u)
-//  }
+
 
   return (
     <div className="container-list">

@@ -65,7 +65,9 @@
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.15.0",
     "@testing-library/jest-dom": "^5.14.1",
+    "@types/node": "^16.4.13",
     "@types/react": "^17.0.16",
+    "@types/react-router-dom": "^5.1.8",
     "babel-core": "^6.26.3",
     "babel-jest": "^26.6.3",
     "babel-loader": "^8.1.0",

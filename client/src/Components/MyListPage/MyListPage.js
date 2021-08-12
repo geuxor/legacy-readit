@@ -1,7 +1,7 @@
 import React, {useContext, useState, useEffect} from 'react'
 import BooksList from '../BooksList/BooksList'
 import SingleBook from '../SingleBook/SingleBook'
-import { AppContext } from '../Dashboard/Dashboard'
+import { AppContext } from '../../AppContext';
 import FilterBar from '../FilterBar/FilterBar'
 
 export default function MyListPage() {

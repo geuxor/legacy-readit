@@ -5,13 +5,18 @@ import NavBar from '../NavBar/NavBar';
 import './Dashboard.css';
 import DashboardPage from '../DashboardPage/DashboardPage';
 import ApiDb from '../../Services/ApiDb';
+import { AppContext } from '../../AppContext';
 
-export const AppContext = React.createContext({myList: any, setMyList: (list) => {}});
+
+
 
 export default function Dashboard() {
-  const [unSortedResults, setResults] = useState([]);
-  const [sortOrder, setSortOrder] = useState('');
-  const [myList, setMyList] = useState([]);
+
+  const { myList, setMyList, sortOrder, setSortOrder, unSortedResults, setResults } = React.useContext(AppContext);
+
+  // const [unSortedResults, setResults] = useState<Result[]>([]);
+  // const [sortOrder, setSortOrder] = useState<'Oldest' | 'Newest'>('Newest');
+  // const [myList, setMyList] = useState<any>([]);
 
  console.log(myList)
   useEffect(() => {
@@ -25,35 +30,24 @@ export default function Dashboard() {
       return data
     }
     dataFromDb().then(data => setMyList(data))
-  }, []);
+  }, [setMyList]);
 
   const results = [...unSortedResults].sort((a, b) => {
     if (sortOrder === 'Oldest') {
       return (
-        parseInt(b.volumeInfo.publishedDate?.substring(0, 4)) -
-        parseInt(a.volumeInfo.publishedDate?.substring(0, 4))
+        parseInt(b.volumeInfo.publishedDate.substring(0, 4)) -
+        parseInt(a.volumeInfo.publishedDate.substring(0, 4))
       );
-    } else if (sortOrder === 'Newest') {
+    } else {
       return (
-        parseInt(a.volumeInfo.publishedDate?.substring(0, 4)) -
-        parseInt(b.volumeInfo.publishedDate?.substring(0, 4))
+        parseInt(a.volumeInfo.publishedDate.substring(0, 4)) -
+        parseInt(b.volumeInfo.publishedDate.substring(0, 4))
       );
     }
   });
 
   return (
     <Router>
-      <AppContext.Provider
-        value={{
-          unSortedResults,
-          setResults,
-          myList,
-          setMyList,
-          sortOrder,
-          setSortOrder,
-          results,
-        }}
-      >
         <div className="main-container">
           <NavBar />
           <Switch>
@@ -61,7 +55,6 @@ export default function Dashboard() {
             <Route path="/mylist" component={MyListPage} />
           </Switch>
         </div>
-      </AppContext.Provider>
     </Router>
   );
 }
