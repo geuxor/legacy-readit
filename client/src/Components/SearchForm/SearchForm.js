@@ -5,7 +5,7 @@ import './SearchForm.css';
 
 export default function SearchForm(props) {
 
-  const {book, setBook} = useContext(AppContext);
+  const {book, setBook, unSortedResults, setResults } = useContext(AppContext);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -13,7 +13,8 @@ export default function SearchForm(props) {
     if (!book) return;
     props.setIsLoading(true);
     Api.getBooks(book).then((data) => {
-      props.setResults(data.items);
+      setResults(data.items);
+      console.log(unSortedResults);
       props.setIsLoading(false);
     }) } catch(e) {
       console.log(e)

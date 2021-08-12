@@ -5,6 +5,7 @@ async function postBook(req, res) {
 
   try {
     const book = await db.Book.create({
+      google_id: req.body.id,
       title: req.body.volumeInfo.title,
       description: req.body.volumeInfo.description,
       publishedDate: req.body.volumeInfo.publishedDate,
