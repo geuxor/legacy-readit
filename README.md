@@ -65,10 +65,6 @@ Thanks goes to these wonderful people ([💝 ](https://allcontributors.org/docs/
 <!-- markdownlint-disable -->
 <table>
   <tr>
-  <td align="center"><a href="http://www.linkedin.com/in/german-b">
-   <img src="https://avatars.githubusercontent.com/u/16254346?v=4" width="100px;" alt=""/><br /><sub><b>German</b></sub></a><br />
-   <a href="#infra-gexuor" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> 
-   <a href="https://github.com/geuxor/legacy-readit/commits?author=geuxor" title="Code">💻</a></td>
   <td align="center"><a href="https://www.linkedin.com/in/aaron-zomback/">
    <img src="https://avatars.githubusercontent.com/u/63470294?v=4" width="100px;" alt=""/><br /><sub><b>Aaron</b></sub></a><br />
    <a href="#infra-aaronzomback" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> 
@@ -77,6 +73,10 @@ Thanks goes to these wonderful people ([💝 ](https://allcontributors.org/docs/
    <img src="https://avatars.githubusercontent.com/u/79053034?v=4" width="100px;" alt=""/><br /><sub><b>Seb</b></sub></a><br />
    <a href="#infra-greenseb" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> 
    <a href="https://github.com/geuxor/legacy-readit/commits?author=greenseb" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.linkedin.com/in/german-b">
+   <img src="https://avatars.githubusercontent.com/u/16254346?v=4" width="100px;" alt=""/><br /><sub><b>German</b></sub></a><br />
+   <a href="#infra-gexuor" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> 
+   <a href="https://github.com/geuxor/legacy-readit/commits?author=geuxor" title="Code">💻</a></td>
  </tr>
 </table>
 
