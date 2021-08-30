@@ -2,7 +2,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-<span align="center">![ForTheBadge built-with-love](https://forthebadge.com/images/badges/0-percent-optimized.svg)</span>
+<span align="center">![ForTheBadge built-with-love](https://forthebadge.com/images/badges/10-percent-optimized.svg)</span>
 <span align="center">
   ![ForTheBadge Refactored-with-love](https://forthebadge.com/images/badges/made-with-typescript.svg)
 </span>
