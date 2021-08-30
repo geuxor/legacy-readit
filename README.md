@@ -34,6 +34,15 @@ The App uses Google API to fetch books, and allows a user to store them in a dat
 
 ## Tech Stack
 
+node
+react
+babel-core": "^6.26.3",
+    "jest": "^26.6.0",
+    "typescript": "^4.3.5"
+    "@testing-library/user-event": "^12.8.3",
+    "react": "^17.0.2",
+    "styled-components": "^5.3.0",
+    
 ![https://www.npmjs.com/package/bcrypt](https://img.shields.io/badge/bcrypt--v1--white?style=for-the-badge&logo=npm)
 ![https://redis.io](https://img.shields.io/badge/redis--v1--white?style=for-the-badge&logo=redis)
 ![https://expressjs.com](https://img.shields.io/badge/express--v1--white?style=for-the-badge&logo=express)
@@ -43,8 +52,8 @@ The App uses Google API to fetch books, and allows a user to store them in a dat
 
 ### Frontend
 
-![https://www.cloudinary.com](https://img.shields.io/badge/cloudinary--v1--white?style=for-the-badge&logo=cloudinary)
-![https://www.stripe.com](https://img.shields.io/badge/stripe%20Connect--v1--white?style=for-the-badge&logo=stripe)
+![https://www.nodejs.com](https://img.shields.io/badge/node--v1--white?style=for-the-badge&logo=node)
+![https://www.jest.com](https://img.shields.io/badge/stripe%20Connect--v1--white?style=for-the-badge&logo=stripe)
 ![https://www.reactjs.org](https://img.shields.io/badge/react--v1--white?style=for-the-badge&logo=react)
 ![https://github.com/axios/axios](https://img.shields.io/badge/axios--v1--white?style=for-the-badge&logo=npm)
 ![https://redux.js.org/](https://img.shields.io/badge/redux--v1--white?style=for-the-badge&logo=redux)
