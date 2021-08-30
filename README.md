@@ -54,7 +54,7 @@ Refactored the code to TypeScript and created multiple unit/end-end/integration 
 
 😋  German - [Github](https://github.com/geuxor) - [LinkedIn](https://www.linkedin.com/in/german-b)\
 😋  Aaron - [Github](https://github.com/aaronzomback) - [LinkedIn](https://www.linkedin.com/in/aaron-zomback)\
-😋  Seb - [Github](https://github.com/greenseb) - [LinkedIn](https://www.linkedin.com/in/sebastiangreen13)\
+😋  Seb - [Github](https://github.com/greenseb) - [LinkedIn](https://www.linkedin.com/in/sebastiangreen13)
 
 ## Contributors ✨
 
@@ -69,14 +69,10 @@ Thanks goes to these wonderful people ([💝 ](https://allcontributors.org/docs/
    <img src="https://avatars.githubusercontent.com/u/16254346?v=4" width="100px;" alt=""/><br /><sub><b>German</b></sub></a><br />
    <a href="#infra-gexuor" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> 
    <a href="https://github.com/geuxor/legacy-readit/commits?author=geuxor" title="Code">💻</a></td>
- </tr>
-   <tr>
   <td align="center"><a href="https://www.linkedin.com/in/aaron-zomback/">
    <img src="https://avatars.githubusercontent.com/u/?v=4" width="100px;" alt=""/><br /><sub><b>Aaron</b></sub></a><br />
    <a href="#infra-aaronzomback" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> 
    <a href="https://github.com/geuxor/legacy-readit/commits?author=aaronzomback" title="Code">💻</a></td>
- </tr>
-   <tr>
   <td align="center"><a https://www.linkedin.com/in/sebastiangreen13/">
    <img src="https://avatars.githubusercontent.com/u/?v=4" width="100px;" alt=""/><br /><sub><b>Seb</b></sub></a><br />
    <a href="#infra-greenseb" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> 
