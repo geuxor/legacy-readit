@@ -4,8 +4,7 @@
 
 <span align="center">![ForTheBadge built-with-love](https://forthebadge.com/images/badges/0-percent-optimized.svg)</span>
 <span align="center">
-  [![ForTheBadge Refactored-with-love](https://forthebadge.com/images/badges/made-with-typescript.svg)]
-  [![forthebadge](https://forthebadge.com/images/badges/100-percent-optimized.svg)](http:\\www.a.com)
+  ![ForTheBadge Refactored-with-love](https://forthebadge.com/images/badges/made-with-typescript.svg)
 </span>
 
 
