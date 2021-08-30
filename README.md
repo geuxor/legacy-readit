@@ -6,9 +6,7 @@
 
 <span align="center">![ForTheBadge Refactored-with-love](https://forthebadge.com/images/badges/built-with-love.svg)</span>
 
-<p align="center">
- <img src="./readmeFiles/logo-small.png" alt="logo" style="zoom:40%;" >
-</p>
+**Refactored the code to TypeScript and created multiple unit/end-end/integration tests using Jest, Babel, testing-library.**
 
 ## Table of contents
 
@@ -24,7 +22,9 @@
 # Read it
 A platform to fetch books from the Google Api and save them in a personal wishlist. 
 
-The App uses Google API to fetch books, and allows a user to store them in a database as a wish list. It allows a user to search for specific topis, view a list of books, rate them and save them to the database. 
+The App uses Google API to fetch books, and allows a user to store them in a database as a wish list. It allows a user to search for specific topis, view a list of books, rate them and save them to the database.
+
+Refactored the code to TypeScript and created multiple unit/end-end/integration tests using Jest, Babel, testing-library.
 
 ## Teaser
 
@@ -34,48 +34,16 @@ The App uses Google API to fetch books, and allows a user to store them in a dat
 
 ## Tech Stack
 
-node
-react
-babel-core": "^6.26.3",
-    "jest": "^26.6.0",
-    "typescript": "^4.3.5"
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "styled-components": "^5.3.0",
-    
-![https://www.npmjs.com/package/bcrypt](https://img.shields.io/badge/bcrypt--v1--white?style=for-the-badge&logo=npm)
-![https://redis.io](https://img.shields.io/badge/redis--v1--white?style=for-the-badge&logo=redis)
-![https://expressjs.com](https://img.shields.io/badge/express--v1--white?style=for-the-badge&logo=express)
-![https://www.postgresql.org](https://img.shields.io/badge/postgresQL--v1--white?style=for-the-badge&logo=postgresQL)
-![https://sequelize.org](https://img.shields.io/badge/sequelize--v1--white?style=for-the-badge&logo=sequelize)
-![https://www.stripe.com](https://img.shields.io/badge/stripe%20Connect--v1--white?style=for-the-badge&logo=stripe)
-
-### Frontend
-
-![https://www.nodejs.com](https://img.shields.io/badge/node--v1--white?style=for-the-badge&logo=node)
-![https://www.jest.com](https://img.shields.io/badge/stripe%20Connect--v1--white?style=for-the-badge&logo=stripe)
+![https://www.typescriptlang.org](https://img.shields.io/badge/typescript--v1--white?style=for-the-badge&logo=typescript)
 ![https://www.reactjs.org](https://img.shields.io/badge/react--v1--white?style=for-the-badge&logo=react)
-![https://github.com/axios/axios](https://img.shields.io/badge/axios--v1--white?style=for-the-badge&logo=npm)
-![https://redux.js.org/](https://img.shields.io/badge/redux--v1--white?style=for-the-badge&logo=redux)
+![https://expressjs.com](https://img.shields.io/badge/express--v1--white?style=for-the-badge&logo=express)
+![https://sequelize.org](https://img.shields.io/badge/sequelize--v1--white?style=for-the-badge&logo=sequelize)
+![https://www.postgresql.org](https://img.shields.io/badge/postgresQL--v1--white?style=for-the-badge&logo=postgresQL)
+![https://testing-library.com/](https://img.shields.io/badge/testing-library--v1--white?style=for-the-badge&logo=testing-library)
+![https://jestjs.io/](https://img.shields.io/badge/jest--v1--white?style=for-the-badge&logo=jest)
+![https://babeljs.io/](https://img.shields.io/badge/babel--v1--white?style=for-the-badge&logo=babel)
 
-### CI / CD
-
-- [Github Features](https://github.com/features/actions)
-- [Trello](https://trello.com)
-
-### Hosting
-
-- [Netlify](https://netlify.com) for Frontend and Backend
-
-### Authentication
-
-- Session Cookies with bcrypt
-
-### APIs
-
-- [Stripe Connect](https://stripe.com)
-
-## Running colonyal
+## Running ReadIt
 
 - Fork & clone this repo  
 - Run `npm i` in colonyal directory  
@@ -89,19 +57,11 @@ babel-core": "^6.26.3",
 - With the database running, run `npm run recreateDb`. This will generate the tables in the database and seed the data to get the project started.
 - Run `nodemon` in colonyal/server directory
 
-## Architecture
-(coming soon...)
-
-## Observations
-
-##### Upcoming Pull Requests
-
-- Deploy colonyal to the web
-- Create PWA 
-
-## Developer, Designer and PM
+## Developers
 
 😋  German - [Github](https://github.com/geuxor) - [LinkedIn](https://www.linkedin.com/in/german-b)\
+😋  Aaron - [Github](https://github.com/aaronzomback) - [LinkedIn](https://www.linkedin.com/in/aaron-zomback)\
+😋  Seb - [Github](https://github.com/greenseb) - [LinkedIn](https://www.linkedin.com/in/sebastiangreen13)\
 
 ## Contributors ✨
 
@@ -115,7 +75,19 @@ Thanks goes to these wonderful people ([💝 ](https://allcontributors.org/docs/
   <td align="center"><a href="http://www.linkedin.com/in/german-b">
    <img src="https://avatars.githubusercontent.com/u/16254346?v=4" width="100px;" alt=""/><br /><sub><b>German</b></sub></a><br />
    <a href="#infra-gexuor" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> 
-   <a href="https://github.com/geuxor/colonyal/commits?author=geuxor" title="Code">💻</a></td>
+   <a href="https://github.com/geuxor/legacy-readit/commits?author=geuxor" title="Code">💻</a></td>
+ </tr>
+   <tr>
+  <td align="center"><a href="https://www.linkedin.com/in/aaron-zomback/">
+   <img src="https://avatars.githubusercontent.com/u/?v=4" width="100px;" alt=""/><br /><sub><b>Aaron</b></sub></a><br />
+   <a href="#infra-aaronzomback" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> 
+   <a href="https://github.com/geuxor/legacy-readit/commits?author=aaronzomback" title="Code">💻</a></td>
+ </tr>
+   <tr>
+  <td align="center"><a https://www.linkedin.com/in/sebastiangreen13/">
+   <img src="https://avatars.githubusercontent.com/u/?v=4" width="100px;" alt=""/><br /><sub><b>Seb</b></sub></a><br />
+   <a href="#infra-greenseb" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> 
+   <a href="https://github.com/geuxor/legacy-readit/commits?author=greenseb" title="Code">💻</a></td>
  </tr>
 </table>
 
