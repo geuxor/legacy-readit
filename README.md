@@ -4,7 +4,7 @@
 
 <span align="center">
   ![ForTheBadge Refactored-with-love](https://forthebadge.com/images/badges/made-with-typescript.svg)
-  [![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)](https://forthebadge.com)
+  ![forthebadge](https://forthebadge.com/images/badges/0-percent-optimized.svg)
 </span>
 
 
