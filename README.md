@@ -2,10 +2,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-<span align="center">
-  ![ForTheBadge Refactored-with-love](https://forthebadge.com/images/badges/made-with-typescript.svg)
-</span>
-
+<span align="center">![ForTheBadge built-with-love](https://forthebadge.com/images/badges/built-with-love.svg)</span>
 
 **Refactored the code to TypeScript and created multiple unit/end-end/integration tests using Jest, Babel, testing-library.**
 
