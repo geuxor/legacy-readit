@@ -2,8 +2,6 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[![GitHub license](https://img.shields.io/github/license/geuxor/readit)](https://github.com/geuxor/legacy-readit/blob/develop/LICENSE)[![GitHub release](https://img.shields.io/github/release/geuxor/readit)](https://github.com/geuxor/legacy-readit/releases/tag/0.9.0)[![GitHub contributors](https://img.shields.io/github/contributors/geuxor/readit)](https://github.com/geuxor/legacy-readit/graphs/contributors)[![GitHub issues](https://img.shields.io/github/issues/geuxor/readit)](https://GitHub.com/geuxor/legacy-readit/issues)
-
 <span align="center">![ForTheBadge Refactored-with-love](https://forthebadge.com/images/badges/built-with-love.svg)</span>
 
 **Refactored the code to TypeScript and created multiple unit/end-end/integration tests using Jest, Babel, testing-library.**
