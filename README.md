@@ -2,7 +2,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-[![GitHub license](https://img.shields.io/github/license/geuxor/legacy-readit)](https://github.com/geuxor/legacy-readit/blob/develop/LICENSE)[![GitHub release](https://img.shields.io/github/release/geuxor/colonyal)](https://github.com/geuxor/colonyal/releases/tag/0.9.0)[![GitHub contributors](https://img.shields.io/github/contributors/geuxor/colonyal)](https://github.com/geuxor/colonyal/graphs/contributors)[![GitHub issues](https://img.shields.io/github/issues/geuxor/colonyal)](https://GitHub.com/geuxor/legacy-readit/issues)
+[![GitHub license](https://img.shields.io/github/license/geuxor/readit)](https://github.com/geuxor/legacy-readit/blob/develop/LICENSE)[![GitHub release](https://img.shields.io/github/release/geuxor/readit)](https://github.com/geuxor/legacy-readit/releases/tag/0.9.0)[![GitHub contributors](https://img.shields.io/github/contributors/geuxor/readit)](https://github.com/geuxor/legacy-readit/graphs/contributors)[![GitHub issues](https://img.shields.io/github/issues/geuxor/readit)](https://GitHub.com/geuxor/legacy-readit/issues)
 
 <span align="center">![ForTheBadge Refactored-with-love](https://forthebadge.com/images/badges/built-with-love.svg)</span>
 
@@ -12,7 +12,7 @@
 
 [Read It](#read-it)  
 [Tech Stack](#tech-stack)  
-[Running colonyal](#running-colonyal)  
+[Running Read It](#running-read-it)  
 [Architecture](#architecture)
 [Observations](#observations)  
 [Developers Team](#developers-team)  
@@ -39,16 +39,10 @@ Refactored the code to TypeScript and created multiple unit/end-end/integration 
 ## Running ReadIt
 
 - Fork & clone this repo  
-- Run `npm i` in colonyal directory  
-- Adjust the necessary env variables to match your system. There's a .env.copy file to help you with this process. (You will need an API key for Stripe)  
-- Run `npm start`
-
-- Make sure you have postgreSQL installed on your machine [mac](https://www.postgresql.org/download/macosx/) || [windows](https://www.postgresql.org/download/windows/)  
-- Run `npm i` in colonyal/server directory  
-- Adjust the necessary env variables to match your system. There's a .env.copy file to help you with this process.
-- Edit the ./config/config.json file with your database details.
-- With the database running, run `npm run recreateDb`. This will generate the tables in the database and seed the data to get the project started.
-- Run `nodemon` in colonyal/server directory
+- Make sure you have postgreSQL installed on your machine [mac](https://www.postgresql.org/download/macosx/) || [windows](https://www.postgresql.org/download/windows/)  - Run `npm i` in both server/client directory  
+- Adjust the necessary env variables to match your system (You will need your own Google API key)
+- Run `npm start` in /client directory
+- Run `nodemon` in /server directory
 
 ## Developers
 
