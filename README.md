@@ -11,7 +11,6 @@
 ## Table of contents
 
 [Read It](#read-it)  
-[Teaser](#teaser)  
 [Tech Stack](#tech-stack)  
 [Running colonyal](#running-colonyal)  
 [Architecture](#architecture)
@@ -25,12 +24,6 @@ A platform to fetch books from the Google Api and save them in a personal wishli
 The App uses Google API to fetch books, and allows a user to store them in a database as a wish list. It allows a user to search for specific topis, view a list of books, rate them and save them to the database.
 
 Refactored the code to TypeScript and created multiple unit/end-end/integration tests using Jest, Babel, testing-library.
-
-## Teaser
-
-<p align="center">
- <img src="./readmeFiles/back.png" style="zoom:20%;" >
-</p>
 
 ## Tech Stack
 
